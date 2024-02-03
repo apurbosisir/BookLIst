@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book List Add To Cart Functionality </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/all.min.css">
+  </head>
+  <style>
+    .iactive{  
+      width: 100%;
+      height: 10%;
+     display: none;
+    }
+    .iactive.inactive{
+     display: block;
+     
+    }
+   .active{
+    width: 100%;
+   }
+ 
+    .active.abc{
+
+      display: none;
+    }
+    .first{
+      width: 100%;
+      height: 380px;
+    }
+    .navbar{
+      position: relative;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgb(9, 128, 231);
+    }
+    .img{
+     
+      float: right;
+      margin-right: 20px;
+      width: 50px;
+    }
+    .viewcart{
+      margin-left: 80px;
+    }
+    .fa-cart-shoppings{
+      color: blueviolet;
+    
+    }
+
+
+      /* @media  (max-width:1199px){
+        .active{
+    width: 50%;
+    gap: 7px;
+   position: absolute;
+    background: #000;
+  }
+   
+  marquee{
+      color: blueviolet;
+    margin-top: 420px;
+    }
+    input{
+      width: 100%;
+      font-size: 12px;
+    }
+      } */
+    @media  (max-width:992px){
+   
+      .active{
+        margin-left: -15px;
+    width: 100%;
+    gap: 7px;
+   position: relative;
+    
+  }
+   .marquee{
+     margin-top: 10px;
+     width: 92%;
+     position: absolute;
+   }
+  marquee{
+      color: blueviolet;
+
+    }
+    input{
+      width: 100%;
+      font-size: 17px;
+    }
+}
+
+@media  (max-width:767px){
+   
+  .active{
+        margin-left: -15px;
+    width: 100%;
+    gap: 7px;
+   position: relative;
+    
+  }
+   .marquee{
+     margin-top: 10px;
+     width: 100%;
+     position: absolute;
+   }
+  marquee{
+      color: blueviolet;
+
+    }
+    input{
+      width: 100%;
+      font-size: 17px;
+    }
+}
+@media  (max-width:575px){
+   
+  .active{
+    margin-left: -15px;
+    float: left;
+    width: 95%;
+    gap: 7px;
+    margin-top: 100px;
+   position: absolute;
+   
+  }
+  .marquee{
+     margin-top: 0px;
+     width: 95%;
+     position: absolute;
+   }
+  marquee{
+      color: blueviolet;
+    margin-top: 10px;
+    }
+    input{
+      width: 100%;
+      font-size: 22px;
+    }
+    .conten3{
+      position: absolute;
+      background-color: aqua;
+      width: 1200px;
+      height: 600px;
+  flex-direction: column; text-align: center;
+  
+    }
+    img{
+      width: 50%;
+     
+    }
+    button .btn{
+      width: 100%;
+      outline: none;
+      background: none;
+      border: none;
+    }
+    
+
+}
+
+  
+  </style>
+  <body>
+    <div class="container-fluid">
+      <nav class="nav navbar bg-dark ">
+        <div class="col navbarlist d-flex  gap-5">
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+          
+        </div>
+        <div class="col">
+          <span class="btn btn-outline-warning viewcart position-relative"><i class="fa-solid fa-cart-shopping fs-2"></i></span>
+            <span class="badge border position-absolute btn btn-outline-danger fs-6" style="margin: -27px ; margin-left: -20px; color: rgb(0, 255, 0);;">0</span>
+          
+        </div>
+        <div class="col  ">
+          <img class="img img-fluid" src="./image/b4.jpg" alt="">
+        </div>
+      </nav>
+    </div>
+    <div class="container  first position-relative">
+    <div class="container active     ">
+    <div class="container conten3 d-flex" style="width: 100%;">
+      <!-- First Book List Elements Start -->
+      <div class="col  colfirst border " style="width: 100%; line-height: 42px;">
+       <div class="col addbook bg-info">
+        <img class="imgs " src="./image/b2.jpg" alt=""></div>
+        <div class="col formlist bg-danger">
+        <form class="form forms pointer-events:none" action="">
+        <input class="books1" type="text" value=" Romadan Planner" >
+        <input class="bookss1" type="text" value="Aouthors: Al Amin">
+        <input class="Price1" type="text" value="Price: 500৳">
+        <input role="input" class="bookssss1 border border-success " type="text" value="50">
+     
+       </form>
+               
+
+       <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            
+            
+            
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Book Add</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex m-auto">
+              <img src="./image/70a552e8e955049c8587b2d7606cd6a6.gif" class="img-fluid rounded-circle" style="width:15vw;height:15vw; margin: auto; ">
+            </div><br>
+            <h4 class="ms-4 text-success">Book Added Successfull!</h4>
+            <div class="modal-footer">.
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+   <button class="Add1 btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add</button>
+
+
+
+
+
+      </div>
+      </div>
+ <!-- First Book List Elements End -->
+
+ <!-- 2nd Book List Elements Start -->
+      <div class="col   border border-warnign" style="width: 100%; line-height: 42px;">
+        <div class="col addbook bg-info">
+        <img class="imgs " src="./image/b1.jpg" alt=""></div>
+        <div class="col formlist bg-danger">
+        <form class="form forms pointer-events:none" action="">
+        <input class="books2" type="text" value=" Romadan Planner" >
+        <input class="bookss2" type="text" value="Aouthors: Al Amin">
+        <input class="Price2" type="text" value="Price: 500৳">
+        <input role="input" class="bookssss2 border border-success " type="text" value="50">
+
+        </form> 
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+         <div class="modal-dialog modal-dialog-centered">
+           <div class="modal-content">
+             
+             
+             
+             <div class="modal-header">
+               <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Book Add</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body d-flex m-auto">
+               <img src="./image/70a552e8e955049c8587b2d7606cd6a6.gif" class="img-fluid rounded-circle" style="width:15vw;height:15vw; margin: auto; ">
+             </div><br>
+             <h4 class="ms-4 text-success">Book Added Successfull!</h4>
+             <div class="modal-footer">.
+               <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">OK</button>
+             </div>
+           </div>
+         </div>
+       </div>
+    <button class="Add2 btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add</button>
+      </div>
+      </div>
+ <!-- 2nd Book List Elements End -->
+
+ <!-- 3rd Book List Elements Start -->
+ <div class="col   border" style="width: 100%; line-height: 42px;">
+  <div class="col addbook bg-info">
+  <img class="imgs " src="./image/b3.jpg" alt=""></div>
+  <div class="col formlist bg-danger">
+  <form class="form forms pointer-events:none" action="">
+  <input class="books3" type="text" value=" Romadan Planner" >
+  <input class="bookss3" type="text" value="Aouthors: Al Amin">
+  <input class="Price3" type="text" value="Price: 500৳">
+  <input role="input" class="bookssss3 border border-success " type="text" value="50">
+
+  </form> 
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       
+       
+       
+       <div class="modal-header">
+         <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Book Add</h1>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body d-flex m-auto">
+         <img src="./image/70a552e8e955049c8587b2d7606cd6a6.gif" class="img-fluid rounded-circle" style="width:15vw;height:15vw; margin: auto; ">
+       </div><br>
+       <h4 class="ms-4 text-success">Book Added Successfull!</h4>
+       <div class="modal-footer">.
+         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">OK</button>
+       </div>
+     </div>
+   </div>
+ </div>
+<button class="Add3 btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add</button>
+</div>
+</div>
+<!-- 3rd Book List Elements End -->
+<!-- 4th Book List Elements Start -->
+<div class="col bg-danger  border border-success" style="line-height: 41.5px;">
+  <div class="col addbook bg-info">
+  <img class="imgs " src="./image/b4.jpg" alt=""></div>
+  <div class="col formlist form4 ">
+  <form class="form forms pointer-events:none" action="">
+  <input class="books4" type="text" value=" Romadan Planner" >
+  <input class="bookss4" type="text" value="Aouthors: Al Amin">
+  <input class="Price4" type="text" value="Price: 500৳">
+  <input role="input" class="bookssss4 border border-success " type="text" value="50">
+
+  </form> 
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       
+       
+       
+       <div class="modal-header">
+         <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Book Add</h1>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body d-flex m-auto">
+         <img src="./image/70a552e8e955049c8587b2d7606cd6a6.gif" class="img-fluid rounded-circle" style="width:15vw;height:15vw; margin: auto; ">
+       </div><br>
+       <h4 class="ms-4 text-success">Book Added Successfull!</h4>
+       <div class="modal-footer">.
+         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">OK</button>
+       </div>
+     </div>
+   </div>
+ </div>
+<button class="Add4 btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 4th Book List Elements End -->
+    <div class="container-fluid   ">
+      <div class="row iactive border border-success bg-success">
+        <div class="col  bg-dark">
+          <div class="col iactives d-flex   bg-success">
+             <div class="col bg-danger iactives1">
+
+              
+             </div>
+
+
+             <div class="col bg-light iactives2">
+              <div class="col resutls2">
+
+              </div>
+             
+             </div>
+
+
+             <div class="col bg-info iactives3">
+            
+             </div>
+
+
+             <div class="col bg-warning iactives4">
+                  
+                 
+
+
+              </div>
+       
+        </div>
+        
+       
+       
+      </div>
+      <div class="container btns">
+    <button class="pre">Previous</button>
+    
+  </div>
+    </div>
+    
+  </div>
+  <div style="background: linear-gradient(green,red);color: blue;border: 5px solid purple ;" class="col marquee"><marquee behavior="left" direction=""><h1 class="btn btn-outline-danger" style="border: 10px solid white;color: blue; width: 450px;text-align: center; border-radius: 50px;">Web Developer Students</h1></marquee></div>
+  <script>
+   
+  </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./JS/script.js"></script>
+    
+    <script src="./JS/scripts.js"></script>
+
+    <!-- <script>
+    const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})</script> -->
+
+
+
+</script>
+  </body>
+</html>
